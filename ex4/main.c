@@ -13,14 +13,14 @@
 
 int main() {
     
-    int s1, s2, sum=0;
+    int s1, s2, s3, sum=0;
     char name[20];
     
     srand(time(NULL));
     
     s1=rand()%6 + 1;
     s2=rand()%6 + 1;
-    
+    s3=rand()%6 + 1;
     sum=s1+s2;
     
     printf("What is your name?\n");
@@ -34,7 +34,16 @@ int main() {
     printf("Total value : %d\n",sum);
     
     if(sum > 7) printf("%s won!\n",name);
-    else printf("%s lost!\n",name);
-
+    else {
+        printf("%s lost!\n",name);
+        printf("One more chance!\n");
+        printf("Rolling the dice...\n");
+        printf("Die 3 : %d\n",s3);
+        sum+=s3;
+        printf("Total value : %d\n",sum);
+        if(sum > 7) printf("%s won!\n",name);
+        else printf("%s lost!\n",name);
+        
+    }
     return 0;
 }
