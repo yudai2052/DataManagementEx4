@@ -14,6 +14,7 @@
 int main() {
     
     int s1, s2, sum=0;
+    char name[20];
     
     srand(time(NULL));
     
@@ -22,10 +23,18 @@ int main() {
     
     sum=s1+s2;
     
+    printf("What is your name?\n");
+    scanf("%s",name);
+    printf("Hello,%s!\n",name);
+    
+    
     printf("Rolling the dice...\n");
     printf("Die 1 : %d\n",s1);
     printf("Die 2 : %d\n",s2);
     printf("Total value : %d\n",sum);
+    
+    if(sum > 7) printf("You won!\n");
+    else printf("You lost!\n");
 
     return 0;
 }
